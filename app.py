@@ -763,9 +763,9 @@ if algorithm == 'RSA':
     e = st.text_input("Enter E here")
 
 if algorithm == 'El-Gamal':
+    placeholder = st.empty()
     q = placeholder.text_input("Enter Q here")
     prime_gen = st.button('Generate a prime')
-    placeholder = st.empty()
     if prime_gen:
             q = placeholder.text_input(q,value=GAMAL.prime_gen())
     a = st.text_input("Enter A here")
