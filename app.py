@@ -767,8 +767,12 @@ if algorithm == 'El-Gamal':
     a = st.text_input("Enter A here")
     xa = st.text_input("Enter XA here")
     k = st.text_input("Enter K here")
+    if generate_prime:
+            q = st.text_input(GAMAL.prime_gen())            
    
 input_submit = st.button('Apply Selected Options')
+if algorithm == 'El-Gamal':
+            generate_prime = st.button('Generate random prime number)
 
 
 
