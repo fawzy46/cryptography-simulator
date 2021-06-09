@@ -794,7 +794,7 @@ if input_submit:
     if algorithm == 'RSA':
         RSA.encrypt(p,q,e,input)
     if algorithm == 'El-Gamal':
-        GAMAL.encrypt(int(q),a,xa,k,input)
+        GAMAL.encrypt(q,a,xa,k,input)
 
 
 
