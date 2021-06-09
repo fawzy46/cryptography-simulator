@@ -721,7 +721,7 @@ class GAMAL():
                     is_prime = False
                     break
                 i+=1
-        return q
+        return str(q)
 
     def sm(base,power,mod):
         power_bi = bin(power)[2:]
@@ -767,7 +767,7 @@ if algorithm == 'El-Gamal':
     q = placeholder.text_input("Enter Q here")
     prime_gen = st.button('Generate a prime')
     if prime_gen:
-            q = placeholder.text_input(q,value=GAMAL.prime_gen())
+            q = placeholder.text_input(value=GAMAL.prime_gen())
     a = st.text_input("Enter A here")
     xa = st.text_input("Enter XA here")
     k = st.text_input("Enter K here")         
