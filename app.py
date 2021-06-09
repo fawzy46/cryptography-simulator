@@ -721,7 +721,7 @@ class GAMAL():
                     is_prime = False
                     break
                 i+=2
-        return q
+        return str(q)
 
     def sm(base,power,mod):
         power_bi = bin(power)[2:]
@@ -764,6 +764,9 @@ if algorithm == 'RSA':
 
 if algorithm == 'El-Gamal':
     q = st.text_input("Enter Q here")
+    prime_gen = st.button('Generate a prime')
+    if prime_gen:
+            q = st.text_input(GAMAL.prime_gen())
     a = st.text_input("Enter A here")
     xa = st.text_input("Enter XA here")
     k = st.text_input("Enter K here")         
@@ -790,7 +793,7 @@ if input_submit:
     if algorithm == 'RSA':
         RSA.encrypt(p,q,e,input)
     if algorithm == 'El-Gamal':
-        GAMAL.encrypt(q,a,xa,k,input)
+        GAMAL.encrypt(int(q),a,xa,k,input)
 
 
 
