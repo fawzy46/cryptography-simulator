@@ -714,13 +714,13 @@ class GAMAL():
             q = random.randint(2,2000)
             sqrt_q = math.sqrt(q)
             sqrt_q = math.floor(sqrt_q)
-            i = 3
+            i = 2
             is_prime = True
             while i <= sqrt_q:
                 if q%i == 0:
                     is_prime = False
                     break
-                i+=2
+                i+=1
         return str(q)
 
     def sm(base,power,mod):
