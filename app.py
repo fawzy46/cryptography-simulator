@@ -721,7 +721,7 @@ class GAMAL():
                     is_prime = False
                     break
                 i+=1
-        return str(q)
+        return q
 
     def sm(base,power,mod):
         power_bi = bin(power)[2:]
