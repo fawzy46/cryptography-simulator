@@ -772,7 +772,7 @@ if algorithm == 'El-Gamal':
    
 input_submit = st.button('Apply Selected Options')
 if algorithm == 'El-Gamal':
-            generate_prime = st.button('Generate random prime number)
+            generate_prime = st.button('Generate random prime')
 
 
 
