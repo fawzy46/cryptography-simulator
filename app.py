@@ -714,7 +714,7 @@ class GAMAL():
             q = random.randint(2,2000)
             sqrt_q = math.sqrt(q)
             sqrt_q = math.floor(sqrt_q)
-            i = 2
+            i = 3
             is_prime = True
             while i <= sqrt_q:
                 if q%i == 0:
