@@ -389,7 +389,7 @@ class AES():
          
         
         def mult(p1, p2):
-            """Multiply two polynomials in GF(2^4)/x^4 + x + 1"""
+            
             p = 0
             while p2:
                 if p2 & 0b1:
@@ -405,25 +405,25 @@ class AES():
             return [n >> 12, (n >> 4) & 0xf, (n >> 8) & 0xf,  n & 0xf]            
          
         def vecToInt(m):
-            """Convert a 4-element vector into 2-byte integer"""
+            
             return (m[0] << 12) + (m[2] << 8) + (m[1] << 4) + m[3]
          
         def addKey(s1, s2):
-            """Add two keys in GF(2^4)"""  
+            
             return [i ^ j for i, j in zip(s1, s2)]
              
         def sub4NibList(s):
-            """Nibble substitution function"""
+            
             return [sBox[e] for e in s]
              
         def shiftRow(s):
-            """ShiftRow function"""
-            return [s[0], s[3], s[2], s[1]]
+           
+            return [s[0], s[1], s[3], s[2]]
          
         def keyExp(key):
-            """Generate the three round keys"""
+            
             def sub2Nib(b):
-                """Swap each nibble and substitute it using sBox"""
+                
                 return sBox[b >> 4] + (sBox[b & 0x0f] << 4)
          
             Rcon1, Rcon2 = 0b10000000, 0b00110000
@@ -445,7 +445,7 @@ class AES():
             st.text(f"key2= {decimalToBinary((w[4] << 8) + w[5])} >>>>>>>>>>>>>>>>>>>>")
                   
         def encrypt(ptext,key):
-            """Encrypt plaintext block"""
+            
             def mixCol(s):
                 return [s[0] ^ mult(4, s[2]), s[1] ^ mult(4,s[3]),
                         s[2] ^ mult(4, s[0]), s[3] ^ mult(4, s[1])]    
