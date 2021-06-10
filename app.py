@@ -418,7 +418,7 @@ class AES():
              
         def shiftRow(s):
             """ShiftRow function"""
-            return [s[0], s[1], s[3], s[2]]
+            return [s[0], s[3], s[2], s[1]]
          
         def keyExp(key):
             """Generate the three round keys"""
